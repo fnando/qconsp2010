@@ -11,10 +11,10 @@ end
 
 module Permalink
   def self.included(base)
-    base.send :extend, Macro
+    base.send :extend, ClassMethods
   end
 
-  module Macro
+  module ClassMethods
     def has_permalink
       class_eval do
         before_validation :generate_permalink
